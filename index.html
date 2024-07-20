@@ -89,6 +89,51 @@
         50%{ transform: scale(1.5);}
         100%{ transform: scale(1);}
     }
+    * {
+    box-sizing: border-box;
+    }
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #e91e63;
+    border-radius: 20px;
+    }
+
+    /* Create four equal columns that sits next to each other */
+    .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 10px;
+    }
+
+    .column img {
+    margin-top: 15px;
+    vertical-align: middle;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 
+              -4px 0px 8px rgba(0, 0, 0, 0.2), 
+              4px 0px 8px rgba(0, 0, 0, 0.2), 
+              0px -4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media (max-width: 400px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+    }
 
     </style>
 
@@ -101,7 +146,7 @@
             <img src="rings.png" class="ring">
             <h3>Alexander Lucas <span class="love">🤍</span> Madeline Brotherton</h3>
             <p id="timer"></p>
-            <p>My heart will always be for you Maddy!</p>
+            <p>My heart will always be for you!</p>
             <div class="bottom-border"></div>
         </div>
     </div>
@@ -124,5 +169,31 @@
         updateTimer();
         setInterval(updateTimer, 1000); 
     </script>
+
+        <!-- Photo Grid -->
+    <div class="row"> 
+        <div class="column">
+        <img src="couple-img/couple6.jpg" style="width:100%">
+        <img src="couple-img/couple2.jpg" style="width:100%">
+        <img src="couple-img/couple1.jpg" style="width:100%">
+        </div>
+        
+        <div class="column">
+        <img src="couple-img/couple3.jpg" style="width:100%">
+        <img src="couple-img/couple9.jpg" style="width:100%">
+        <img src="couple-img/couple4.jpg" style="width:100%">
+        </div> 
+        
+        <div class="column">
+        <img src="couple-img/couple7.jpg" style="width:100%">
+        <img src="couple-img/couple8.jpg" style="width:100%">
+        </div>
+        
+        <div class="column">
+        <img src="couple-img/couple5.jpg" style="width:100%">
+        <img src="couple-img/couple10.jpg" style="width:100%">
+        <img src="couple-img/couple9.jpg" style="width:100%">
+        </div>
+    </div>
 </body>
 </html>
