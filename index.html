@@ -118,6 +118,28 @@
               4px 0px 8px rgba(0, 0, 0, 0.2), 
               0px -4px 8px rgba(0, 0, 0, 0.2);
     }
+    .heart {
+        background-image: url('White-heart.png'); 
+        background-size: contain; 
+        background-repeat: no-repeat;
+        font-size: 18px;
+        display: inline-block;
+        width: 85px;
+        height: 75px;
+        line-height: 1;
+        text-align: center;
+        vertical-align: middle;
+        color: #e91e63;
+        margin: 0px 20px;
+        padding-top: 20px;
+    }
+    .heart span {
+        display: block; 
+        font-weight: 500;
+    }
+
+
+
 
     /* Responsive layout - makes a two column-layout instead of four columns */
     @media (max-width: 800px) {
@@ -135,6 +157,7 @@
     }
     }
 
+    
     </style>
 
 </head>
@@ -163,7 +186,11 @@
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            timerElement.textContent = `Together for ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`;
+            timerElement.innerHTML = 
+            `<span class="heart"><span>${days}</span><span>days</span></span>
+            <span class="heart"><span>${hours}</span><span>hours</span></span>
+            <span class="heart"><span>${minutes}</span><span>minutes</span></span>
+            <span class="heart"><span>${seconds}</span><span>seconds</span></span>`;
         }
 
         updateTimer();
